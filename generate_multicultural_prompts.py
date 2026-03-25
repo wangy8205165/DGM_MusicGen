@@ -79,7 +79,7 @@ PROMPTS = [
 
 
 def main() -> None:
-    assert len(PROMPTS) == 50, f"Expected 50 prompts, got {len(PROMPTS)}"
+    assert len(PROMPTS) == 51, f"Expected 51 prompts, got {len(PROMPTS)}"
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
