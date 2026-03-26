@@ -102,6 +102,8 @@ def main() -> None:
     processor = AutoProcessor.from_pretrained(MODEL_ID)
     sampling_rate = model.config.audio_encoder.sampling_rate
 
+    print(f"Sampling rate: {sampling_rate}")
+
     subset = PROMPTS[:n]
     for i, prompt in enumerate(subset, start=1):
         out_path = f"musicgen_prompt_{i}.wav"
@@ -124,6 +126,7 @@ def main() -> None:
         wav = audio_values[0, 0].detach().cpu().numpy()
         scipy.io.wavfile.write(out_path, rate=sampling_rate, data=wav)
 
+        print(f"Successfully generated {out_path}")
         if device.startswith("cuda"):
             torch.cuda.empty_cache()
 
