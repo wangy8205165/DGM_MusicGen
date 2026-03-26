@@ -12,7 +12,7 @@ from transformers import AutoProcessor, MusicgenForConditionalGeneration
 import scipy.io.wavfile
 
 MAX_TOKENS = 1024
-MODEL_ID = "facebook/musicgen-large"
+MODEL_ID = "facebook/musicgen-small"
 
 # 50 prompts: East Asia (China, Japan, Korea), Middle East, India, and other traditions
 PROMPTS = [
